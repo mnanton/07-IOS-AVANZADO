@@ -17,6 +17,13 @@
 		45EC147B2AE3CD8D000C7BB9 /* DBHeroesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC147A2AE3CD8D000C7BB9 /* DBHeroesTests.swift */; };
 		45EC14852AE3CD8D000C7BB9 /* DBHeroesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14842AE3CD8D000C7BB9 /* DBHeroesUITests.swift */; };
 		45EC14872AE3CD8D000C7BB9 /* DBHeroesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14862AE3CD8D000C7BB9 /* DBHeroesUITestsLaunchTests.swift */; };
+		45EC149E2AE3CE8C000C7BB9 /* SplashView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45EC149D2AE3CE8C000C7BB9 /* SplashView.storyboard */; };
+		45EC14A02AE3CE9F000C7BB9 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC149F2AE3CE9F000C7BB9 /* SplashViewModel.swift */; };
+		45EC14A22AE3CEB4000C7BB9 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14A12AE3CEB4000C7BB9 /* SplashViewController.swift */; };
+		45EC14A52AE3CF12000C7BB9 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 45EC14A42AE3CF12000C7BB9 /* KeychainSwift */; };
+		45EC14A72AE3CF48000C7BB9 /* ApiDball.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14A62AE3CF48000C7BB9 /* ApiDball.swift */; };
+		45EC14AA2AE3CF9D000C7BB9 /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14A92AE3CF9C000C7BB9 /* Hero.swift */; };
+		45EC14AC2AE3CFC8000C7BB9 /* KeyChainConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45EC14AB2AE3CFC8000C7BB9 /* KeyChainConnection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +58,12 @@
 		45EC14802AE3CD8D000C7BB9 /* DBHeroesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DBHeroesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		45EC14842AE3CD8D000C7BB9 /* DBHeroesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHeroesUITests.swift; sourceTree = "<group>"; };
 		45EC14862AE3CD8D000C7BB9 /* DBHeroesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHeroesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		45EC149D2AE3CE8C000C7BB9 /* SplashView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashView.storyboard; sourceTree = "<group>"; };
+		45EC149F2AE3CE9F000C7BB9 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		45EC14A12AE3CEB4000C7BB9 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		45EC14A62AE3CF48000C7BB9 /* ApiDball.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiDball.swift; sourceTree = "<group>"; };
+		45EC14A92AE3CF9C000C7BB9 /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
+		45EC14AB2AE3CFC8000C7BB9 /* KeyChainConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyChainConnection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EC14A52AE3CF12000C7BB9 /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,14 +115,13 @@
 		45EC145F2AE3CD8B000C7BB9 /* DBHeroes */ = {
 			isa = PBXGroup;
 			children = (
-				45EC14602AE3CD8B000C7BB9 /* AppDelegate.swift */,
-				45EC14622AE3CD8B000C7BB9 /* SceneDelegate.swift */,
+				45EC149C2AE3CE5A000C7BB9 /* Resources */,
+				45EC14712AE3CD8D000C7BB9 /* Info.plist */,
+				45EC149B2AE3CE33000C7BB9 /* App */,
+				45EC14942AE3CDEF000C7BB9 /* Domain */,
+				45EC14932AE3CDE4000C7BB9 /* UI */,
 				45EC14642AE3CD8B000C7BB9 /* ViewController.swift */,
 				45EC14662AE3CD8B000C7BB9 /* Main.storyboard */,
-				45EC146C2AE3CD8D000C7BB9 /* Assets.xcassets */,
-				45EC146E2AE3CD8D000C7BB9 /* LaunchScreen.storyboard */,
-				45EC14712AE3CD8D000C7BB9 /* Info.plist */,
-				45EC14692AE3CD8B000C7BB9 /* DBHeroes.xcdatamodeld */,
 			);
 			path = DBHeroes;
 			sourceTree = "<group>";
@@ -130,6 +143,101 @@
 			path = DBHeroesUITests;
 			sourceTree = "<group>";
 		};
+		45EC14932AE3CDE4000C7BB9 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				45EC146E2AE3CD8D000C7BB9 /* LaunchScreen.storyboard */,
+				45EC149A2AE3CE29000C7BB9 /* Splash */,
+				45EC14992AE3CE22000C7BB9 /* Login */,
+				45EC14982AE3CE18000C7BB9 /* Main */,
+				45EC14972AE3CE0E000C7BB9 /* Detail */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		45EC14942AE3CDEF000C7BB9 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				45EC14A82AE3CF75000C7BB9 /* Models */,
+				45EC14962AE3CDFF000C7BB9 /* API */,
+				45EC14952AE3CDF7000C7BB9 /* Data */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		45EC14952AE3CDF7000C7BB9 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				45EC14692AE3CD8B000C7BB9 /* DBHeroes.xcdatamodeld */,
+				45EC14AB2AE3CFC8000C7BB9 /* KeyChainConnection.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		45EC14962AE3CDFF000C7BB9 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				45EC14A62AE3CF48000C7BB9 /* ApiDball.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		45EC14972AE3CE0E000C7BB9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		45EC14982AE3CE18000C7BB9 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		45EC14992AE3CE22000C7BB9 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		45EC149A2AE3CE29000C7BB9 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				45EC149D2AE3CE8C000C7BB9 /* SplashView.storyboard */,
+				45EC149F2AE3CE9F000C7BB9 /* SplashViewModel.swift */,
+				45EC14A12AE3CEB4000C7BB9 /* SplashViewController.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		45EC149B2AE3CE33000C7BB9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				45EC14622AE3CD8B000C7BB9 /* SceneDelegate.swift */,
+				45EC14602AE3CD8B000C7BB9 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		45EC149C2AE3CE5A000C7BB9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45EC146C2AE3CD8D000C7BB9 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		45EC14A82AE3CF75000C7BB9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				45EC14A92AE3CF9C000C7BB9 /* Hero.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +254,9 @@
 			dependencies = (
 			);
 			name = DBHeroes;
+			packageProductDependencies = (
+				45EC14A42AE3CF12000C7BB9 /* KeychainSwift */,
+			);
 			productName = DBHeroes;
 			productReference = 45EC145D2AE3CD8B000C7BB9 /* DBHeroes.app */;
 			productType = "com.apple.product-type.application";
@@ -218,6 +329,9 @@
 				Base,
 			);
 			mainGroup = 45EC14542AE3CD8B000C7BB9;
+			packageReferences = (
+				45EC14A32AE3CF12000C7BB9 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = 45EC145E2AE3CD8B000C7BB9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -236,6 +350,7 @@
 			files = (
 				45EC14702AE3CD8D000C7BB9 /* LaunchScreen.storyboard in Resources */,
 				45EC146D2AE3CD8D000C7BB9 /* Assets.xcassets in Resources */,
+				45EC149E2AE3CE8C000C7BB9 /* SplashView.storyboard in Resources */,
 				45EC14682AE3CD8B000C7BB9 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,8 +376,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45EC14A02AE3CE9F000C7BB9 /* SplashViewModel.swift in Sources */,
 				45EC14652AE3CD8B000C7BB9 /* ViewController.swift in Sources */,
 				45EC146B2AE3CD8B000C7BB9 /* DBHeroes.xcdatamodeld in Sources */,
+				45EC14AA2AE3CF9D000C7BB9 /* Hero.swift in Sources */,
+				45EC14AC2AE3CFC8000C7BB9 /* KeyChainConnection.swift in Sources */,
+				45EC14A72AE3CF48000C7BB9 /* ApiDball.swift in Sources */,
+				45EC14A22AE3CEB4000C7BB9 /* SplashViewController.swift in Sources */,
 				45EC14612AE3CD8B000C7BB9 /* AppDelegate.swift in Sources */,
 				45EC14632AE3CD8B000C7BB9 /* SceneDelegate.swift in Sources */,
 			);
@@ -451,7 +571,6 @@
 				INFOPLIST_FILE = DBHeroes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -479,7 +598,6 @@
 				INFOPLIST_FILE = DBHeroes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -611,6 +729,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		45EC14A32AE3CF12000C7BB9 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 20.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		45EC14A42AE3CF12000C7BB9 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 45EC14A32AE3CF12000C7BB9 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		45EC14692AE3CD8B000C7BB9 /* DBHeroes.xcdatamodeld */ = {
