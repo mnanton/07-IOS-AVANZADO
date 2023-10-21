@@ -7,23 +7,47 @@
 
 import UIKit
 
-class SplashViewController: UIViewController {
+// Crear Opciones para pasar en el clousure del Protocolo
+enum SplashViewState {
+    case loading(_ isLoading: Bool)
+    case navigationToLogin
+    case navigationToMain
+}
 
+// MARK: - PROTOCOLO -
+protocol SplashViewControllerDelegate {
+    // Clousure para pasar al ViewModel
+    var viewState: ((SplashViewState) -> Void)? {get set}
+    func onViewAppear()
+}
+
+// MARK: - CLASE -
+class SplashViewController: UIViewController {
+    // Instanciar ViewModel del Protocolo
+    var viewModel: SplashViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setObservers()
+        viewModel?.onViewAppear()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+// MARK: - EXTENSION -
+extension SplashViewController {
+    private func setObservers(){
+        // LLamamos al clousure del Protocolo
+        viewModel?.viewState = { [weak self] state in
+            DispatchQueue.main.async {
+                switch state {
+                    case .loading(_):
+                        break
+                    case .navigationToLogin:
+                        break
+                    case .navigationToMain:
+                        break
+                }
+            }
+        }
     }
-    */
-
 }

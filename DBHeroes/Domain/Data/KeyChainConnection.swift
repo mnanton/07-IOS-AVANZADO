@@ -8,19 +8,19 @@
 import Foundation
 import KeychainSwift
 
-protocol SecureDataProviderProtocol {
-    func save(token: String)
+protocol KeyChainProtocol {
+    func setToken(token: String)
     func getToken() -> String?
 }
 
-final class SecureDataProvider: SecureDataProviderProtocol {
+final class KeyChainConnection: KeyChainProtocol {
     private let keychain = KeychainSwift()
 
     private enum Key {
         static let token = "KEY_KEYCHAIN_TOKEN"
     }
 
-    func save(token: String) {
+    func setToken(token: String) {
         keychain.set(token, forKey: Key.token)
     }
 

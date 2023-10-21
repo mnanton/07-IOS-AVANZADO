@@ -12,12 +12,12 @@ extension NotificationCenter {
     static let tokenKey = "KEY_TOKEN"
 }
 
-protocol ApiProviderProtocol {
+protocol ApiDballProtocol {
     func login(for user: String, with password: String)
     func getHeroes(by name: String?, token: String, completion: ((Heroes) -> Void)?)
 }
 
-class ApiProvider: ApiProviderProtocol {
+class ApiDball: ApiDballProtocol {
     // MARK: - Constants -
     static private let apiBaseURL = "https://dragonball.keepcoding.education/api"
     private enum Endpoint {
@@ -28,7 +28,7 @@ class ApiProvider: ApiProviderProtocol {
 
     // MARK: - ApiProviderProtocol -
     func login(for user: String, with password: String) {
-        guard let url = URL(string: "\(ApiProvider.apiBaseURL)\(Endpoint.login)") else {
+        guard let url = URL(string: "\(ApiDball.apiBaseURL)\(Endpoint.login)") else {
             // TODO: Enviar notificación indicando el error
             return
         }
@@ -70,7 +70,7 @@ class ApiProvider: ApiProviderProtocol {
     }
 
     func getHeroes(by name: String?, token: String, completion: ((Heroes) -> Void)?) {
-        guard let url = URL(string: "\(ApiProvider.apiBaseURL)\(Endpoint.heroes)") else {
+        guard let url = URL(string: "\(ApiDball.apiBaseURL)\(Endpoint.heroes)") else {
             // TODO: Enviar notificación indicando el error
             return
         }
