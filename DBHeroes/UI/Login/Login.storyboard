@@ -20,7 +20,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="GGK-pj-xJo" userLabel="StackMain">
-                                <rect key="frame" x="8" y="351.33333333333331" width="377" height="149.33333333333331"/>
+                                <rect key="frame" x="8" y="363.66666666666669" width="377" height="125"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca nombre de Usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uSE-mv-cga" userLabel="LBLuser">
                                         <rect key="frame" x="0.0" y="0.0" width="377" height="38.333333333333336"/>
@@ -28,23 +28,26 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Introduzca Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eX1-Z7-aOC" userLabel="LBLpassword">
-                                        <rect key="frame" x="0.0" y="45.333333333333371" width="377" height="38.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="45.333333333333314" width="377" height="38.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="cYz-x4-6Ao">
-                                        <rect key="frame" x="0.0" y="90.666666666666686" width="377" height="58.666666666666657"/>
+                                        <rect key="frame" x="0.0" y="90.666666666666629" width="377" height="34.333333333333343"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WARNING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZl-fq-1YS" userLabel="LBLwarning">
-                                                <rect key="frame" x="0.0" y="0.0" width="377" height="20.333333333333332"/>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WARNING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZl-fq-1YS" userLabel="LBLwarning">
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" systemColor="systemOrangeColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iDs-Rd-taZ" userLabel="BTNlogin">
-                                                <rect key="frame" x="0.0" y="24.333333333333318" width="377" height="34.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="377" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="filled" title="VALIDAR"/>
+                                                <connections>
+                                                    <action selector="onButtonPressed:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Nbs-N8-lje"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -65,10 +68,25 @@
                             <constraint firstItem="GGK-pj-xJo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="qAr-vV-6G8"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="lblPassword" destination="eX1-Z7-aOC" id="l01-XU-DqD"/>
+                        <outlet property="lblUser" destination="uSE-mv-cga" id="9A0-3u-NO3"/>
+                        <segue destination="4ET-mq-WQk" kind="show" identifier="LOGIN_TO_MAIN" id="PPs-x7-lYY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="mrm-ge-gmP">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="4ET-mq-WQk" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="hqB-Vb-qgZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-Kk-4QR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773" y="-35"/>
         </scene>
     </scenes>
     <resources>

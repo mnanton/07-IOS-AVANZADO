@@ -8,7 +8,7 @@
 import UIKit
 
 protocol MainTableViewControllerDelegate {
-    
+    var viewState:((nowState)->Void)?{get set}
 }
 
 class MainTableViewController: UITableViewController {

@@ -20,8 +20,8 @@ protocol SplashViewControllerDelegate {
     var viewState: ((SplashViewState) -> Void)? {get set}
     
     // Variables para inyectar el ViewModel segun el SEGUE escogido
-    ///var loginViewModel: LoginViewControllerDelegate { get }
-    ///var mainViewModel: MainTableViewControllerDelegate { get }
+    var loginViewModel: LoginViewControllerDelegate { get }
+    var mainTableViewModel: MainTableViewControllerDelegate { get }
     
     func onViewAppear()
 }
@@ -48,13 +48,11 @@ extension SplashViewController {
         switch segue.identifier {
             case "SPLASH_TO_LOGIN":
                 guard let loginViewController = segue.destination as? LoginViewController else {return}
-                loginViewController.viewModel = nil
-                ///loginViewController.viewModel = viewModel?.LoginViewModel
+                loginViewController.viewModel = viewModel?.loginViewModel
 
             case "SPLASH_TO_MAIN":
                 guard let mainTableViewController = segue.destination as? MainTableViewController else {return}
-                mainTableViewController.viewModel = nil
-                ///mainTableViewController.viewModel = viewModel?.MainViewModel
+                mainTableViewController.viewModel = viewModel?.mainTableViewModel
 
             default:
                 break

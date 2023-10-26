@@ -14,15 +14,21 @@ class SplashViewModel: SplashViewControllerDelegate {
     
     var viewState: ((SplashViewState) -> Void)?
     
-    /* Declaramos las Variables ViewModel, según el SEGUE escogido.
+    // Declaramos las Variables ViewModel, según el SEGUE escogido.
     lazy var loginViewModel: LoginViewControllerDelegate = {
     LoginViewModel(
     apiDball: ApiDball(),
     keyChain: KeyChainConnection()
     )
     }()
-    */
     
+    lazy var mainTableViewModel: MainTableViewControllerDelegate = {
+    MainViewModel(
+    apiDball: ApiDball(),
+    keyChain: KeyChainConnection()
+    )
+    }()
+        
     // Verificamos si tenemos Token. Si tenemos Token, el usuario ya fue validado
     private var isToken: Bool {
         keyChain.getToken()?.isEmpty == false
