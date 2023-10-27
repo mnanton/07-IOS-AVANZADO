@@ -1,5 +1,5 @@
 //
-//  MainViewModel.swift
+//  HeroesViewModel.swift
 //  DBHeroes
 //
 //  Created by Miguel Nantón Díaz on 21/10/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MainViewModel: MainTableViewControllerDelegate {
+class HeroesViewModel: HeroesViewControllerDelegate {
     // MARK: - Dependencias -
     private let apiDball: ApiDballProtocol
     private let keyChain: KeyChainProtocol

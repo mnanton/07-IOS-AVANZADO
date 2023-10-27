@@ -8,6 +8,7 @@
 import Foundation
 
 class SplashViewModel: SplashViewControllerDelegate {
+    
     // Instanciamos la clase de la API y conexión con el KeyChain
     private let apiDball: ApiDballProtocol
     private let keyChain: KeyChainProtocol
@@ -17,14 +18,14 @@ class SplashViewModel: SplashViewControllerDelegate {
     // Declaramos las Variables ViewModel, según el SEGUE escogido.
     lazy var loginViewModel: LoginViewControllerDelegate = {
     LoginViewModel(
-    apiDball: ApiDball(),
+    apiDball: ApiDball(keyChain: KeyChainConnection()),
     keyChain: KeyChainConnection()
     )
     }()
     
-    lazy var mainTableViewModel: MainTableViewControllerDelegate = {
-    MainViewModel(
-    apiDball: ApiDball(),
+    lazy var heroesViewModel: HeroesViewControllerDelegate = {
+    HeroesViewModel(
+    apiDball: ApiDball(keyChain: KeyChainConnection()),
     keyChain: KeyChainConnection()
     )
     }()

@@ -7,11 +7,6 @@
 
 import Foundation
 
-extension NotificationCenter {
-    static let apiLoginNotification = Notification.Name("NOTIFICATION_API_LOGIN")
-    static let tokenKey = "KEY_TOKEN"
-}
-
 protocol ApiDballProtocol {
     func login(for user: String, with password: String)
     func getHeroes(by name: String?, token: String, completion: ((Heroes) -> Void)?)
@@ -19,14 +14,19 @@ protocol ApiDballProtocol {
 
 class ApiDball: ApiDballProtocol {
     // MARK: - Constants -
+    let keyChain: KeyChainConnection
     static private let apiBaseURL = "https://dragonball.keepcoding.education/api"
     private enum Endpoint {
         static let login = "/auth/login"
         static let heroes = "/heros/all"
     }
-
-
-    // MARK: - ApiProviderProtocol -
+    
+    // MARK: - Initializers -
+        init(keyChain: KeyChainConnection) {
+        self.keyChain = keyChain
+    }
+    
+    // MARK: - ApiDballProtocol -
     func login(for user: String, with password: String) {
         guard let url = URL(string: "\(ApiDball.apiBaseURL)\(Endpoint.login)") else {
             // TODO: Enviar notificación indicando el error
@@ -44,7 +44,7 @@ class ApiDball: ApiDballProtocol {
         urlRequest.setValue("Basic \(loginData)",
                             forHTTPHeaderField: "Authorization")
 
-        URLSession.shared.dataTask(with: urlRequest) { (data, response, error) in
+        URLSession.shared.dataTask(with: urlRequest) {[weak self] (data, response, error) in
             guard error == nil else {
                 // TODO: Enviar notificación indicando el error
                 return
@@ -60,12 +60,7 @@ class ApiDball: ApiDballProtocol {
                 // TODO: Enviar notificación indicando response vacío
                 return
             }
-
-            NotificationCenter.default.post(
-                name: NotificationCenter.apiLoginNotification,
-                object: nil,
-                userInfo: [NotificationCenter.tokenKey: responseData]
-            )
+            self?.keyChain.setToken(token: responseData)
         }.resume()
     }
 

@@ -71,22 +71,22 @@
                     <connections>
                         <outlet property="lblPassword" destination="eX1-Z7-aOC" id="l01-XU-DqD"/>
                         <outlet property="lblUser" destination="uSE-mv-cga" id="9A0-3u-NO3"/>
-                        <segue destination="4ET-mq-WQk" kind="show" identifier="LOGIN_TO_MAIN" id="PPs-x7-lYY"/>
+                        <segue destination="iTI-6w-2UG" kind="show" identifier="LOGIN_TO_HEROES" id="sKR-SQ-tNK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
+            <point key="canvasLocation" x="137" y="-35"/>
         </scene>
-        <!--Main-->
-        <scene sceneID="mrm-ge-gmP">
+        <!--Heroes-->
+        <scene sceneID="QfB-Gm-738">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="4ET-mq-WQk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="hqB-Vb-qgZ"/>
+                <viewControllerPlaceholder storyboardName="Heroes" id="iTI-6w-2UG" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="AES-s0-c3D"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GS1-Kk-4QR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="26c-Po-Wwf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773" y="-35"/>
+            <point key="canvasLocation" x="992" y="-35"/>
         </scene>
     </scenes>
     <resources>

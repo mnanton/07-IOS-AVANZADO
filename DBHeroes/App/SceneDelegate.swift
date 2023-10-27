@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let rootViewController = storyboard.instantiateViewController(withIdentifier: "SplashViewController") as? SplashViewController
        
         rootViewController?.viewModel = SplashViewModel(
-            apiDball: ApiDball(),
+            apiDball: ApiDball(keyChain: KeyChainConnection()),
             keyChain: KeyChainConnection()
         )
         

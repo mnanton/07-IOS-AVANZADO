@@ -52,12 +52,12 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RoR-Ll-che" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="-221"/>
+            <point key="canvasLocation" x="755" y="-224"/>
         </scene>
-        <!--Main-->
+        <!--Heroes-->
         <scene sceneID="kZY-Zd-exr">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="RhZ-9s-ciz" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Heroes" id="RhZ-9s-ciz" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="LDd-Cg-dxB"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XG4-aA-zoC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
